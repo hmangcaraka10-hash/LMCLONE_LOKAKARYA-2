@@ -1,0 +1,600 @@
+/* =========================================
+   STYLE WEBSITE LATIHAN
+   Dipakai oleh semua halaman .html di folder ini.
+   Dibuat manual, sederhana, untuk pemula.
+
+   Urutan file:
+   1. Reset
+   2. Aturan umum
+   3. Header dan menu
+   4. Hero (index + halaman detail)
+   5. Tentang
+   6. Produk (kartu)
+   7. Artikel (halaman detail)
+   8. CTA
+   9. Footer
+   10. Tampilan HP (media query)
+========================================= */
+
+/* ---------- 1. RESET ---------- */
+/* Menghapus margin bawaan browser supaya semua sama */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ---------- 2. ATURAN UMUM ---------- */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1c2126;          /* warna teks gelap */
+  line-height: 1.6;        /* jarak antar baris */
+}
+
+img {
+  width: 100%;             /* gambar selalu memenuhi kotaknya */
+  display: block;
+}
+
+a {
+  text-decoration: none;   /* hapus garis bawah link */
+  color: inherit;
+}
+
+ul {
+  list-style: none;        /* hapus titik di daftar */
+}
+
+/* wadah = kotak tengah dengan lebar sama di semua section */
+.wadah {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+/* label kecil berwarna biru di atas judul */
+.label-biru {
+  color: #1c5fd0;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+/* tombol umum */
+.tombol {
+  display: inline-block;
+  background: #2f7ded;
+  color: #ffffff;
+  padding: 12px 26px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* tombol berubah sedikit saat disorot mouse (hover) */
+.tombol:hover {
+  background: #1c5fd0;
+}
+
+/* ---------- 3. HEADER DAN MENU ---------- */
+.header {
+  background: #04123c;     /* biru dongker gelap, khas situs korporat */
+  position: sticky;        /* menempel di atas saat scroll */
+  top: 0;
+  z-index: 10;
+}
+
+.dalam-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 14px 20px;
+  display: flex;           /* logo kiri, menu kanan */
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* bagian "CLONE" pada logo berwarna biru terang */
+.logo span {
+  color: #4d94ff;
+}
+
+.menu {
+  display: flex;           /* menu tersusun mendatar */
+  gap: 10px;
+}
+
+.menu > li a {
+  color: #e6ecf5;
+  display: block;
+  padding: 10px 14px;
+}
+
+.menu > li a:hover {
+  color: #ffffff;
+  background: #0e2c66;
+}
+
+/* Dropdown sederhana.
+   Rahasianya: position absolute + display none/block */
+.punya-dropdown {
+  position: relative;
+}
+
+.dropdown {
+  display: none;           /* sembunyikan dulu */
+  position: absolute;
+  top: 100%;               /* muncul di bawah tulisan "Produk" */
+  left: 0;
+  min-width: 180px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* saat dropdown dibuka, JS menambah class "buka" */
+.dropdown.buka {
+  display: block;
+}
+
+.dropdown li a {
+  color: #1c2126;
+  padding: 10px 16px;
+}
+
+.dropdown li a:hover {
+  background: #f4f6fa;
+}
+
+/* tombol hamburger: sembunyikan di layar besar */
+.tombol-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 28px;
+}
+
+/* ---------- 4. HERO ---------- */
+.hero {
+  /* gambar sebagai latar + warna lapisan gelap agar teks terbaca */
+  background: linear-gradient(rgba(4, 18, 60, 0.75), rgba(4, 18, 60, 0.75)),
+              url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/US_Navy_080923-N-2183K-024_The_guided-missile_cruiser_USS_Cape_St._George_%28CG_71%29_steams_in_the_Indian_Ocean_supporting_maritime_security_operations_in_the_U.S._5th_Fleet_area_of_responsibility.jpg/1600px-US_Navy_080923-N-2183K-024_The_guided-missile_cruiser_USS_Cape_St._George_%28CG_71%29_steams_in_the_Indian_Ocean_supporting_maritime_security_operations_in_the_U.S._5th_Fleet_area_of_responsibility.jpg");
+  background-size: cover;           /* gambar menyesuaikan lebar */
+  background-position: center;
+
+  min-height: 520px;                /* tinggi minimal bagian hero */
+  display: flex;                    /* trik agar isi di tengah vertikal */
+  align-items: center;
+
+  color: #ffffff;
+  text-align: left;
+}
+
+/* hero versi kecil untuk halaman detail (hero-kecil) */
+.hero-kecil {
+  min-height: 320px;
+}
+
+.isi-hero {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.label-hero {
+  color: #4d94ff;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 14px;
+}
+
+.teks-hero {
+  max-width: 500px;
+  margin-bottom: 26px;
+  color: #dbe4f5;
+}
+
+/* ---------- 5. TENTANG ---------- */
+.tentang {
+  padding: 70px 0;
+}
+
+.baris-tentang {
+  display: flex;           /* gambar kiri, teks kanan */
+  gap: 40px;
+  align-items: center;
+}
+
+.foto-tentang {
+  width: 50%;
+  height: 320px;
+  object-fit: cover;       /* gambar dipotong rapi memenuhi kotak */
+  border-radius: 4px;
+}
+
+.teks-tentang {
+  width: 50%;
+}
+
+.teks-tentang p {
+  margin-bottom: 12px;
+  color: #4b545c;
+}
+
+/* tombol di bagian tentang butuh jarak dari teks */
+.teks-tentang .tombol {
+  margin-top: 8px;
+}
+
+/* ---------- 6. PRODUK (KARTU) ---------- */
+.produk {
+  padding: 70px 0;
+  background: #f4f6fa;     /* latar abu muda biar beda dengan section lain */
+}
+
+.produk h2 {
+  margin-bottom: 30px;
+}
+
+.baris-kartu {
+  display: flex;
+  gap: 24px;
+}
+
+/* kartu = link besar (a) yang berisi gambar + teks */
+.kartu {
+  width: 33.33%;
+  background: #ffffff;
+  border-radius: 4px;
+  overflow: hidden;        /* gambar tidak keluar dari kartu */
+  border: 1px solid #e3e7ee;
+  display: block;          /* supaya tag <a> berlaku seperti kotak */
+}
+
+/* efek saat kartu disorot mouse: sedikit naik */
+.kartu:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* gambar kartu harus punya tinggi tetap supaya kartu rata */
+.kartu img {
+  height: 180px;
+  object-fit: cover;
+}
+
+.isi-kartu {
+  padding: 18px;
+}
+
+.label-kecil {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #1c5fd0;
+  margin-bottom: 6px;
+}
+
+.kartu h3 {
+  margin-bottom: 8px;
+}
+
+.kartu p {
+  font-size: 14px;
+  color: #4b545c;
+}
+
+/* ---------- 7. ARTIKEL (halaman detail) ---------- */
+.artikel {
+  padding: 60px 0;
+}
+
+/* jejak halaman: Home -> Autonomy & AI */
+.breadcrumb {
+  font-size: 14px;
+  color: #4b545c;
+  margin-bottom: 24px;
+}
+
+.breadcrumb a {
+  color: #1c5fd0;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.artikel h2 {
+  margin-bottom: 16px;
+}
+
+.artikel p {
+  margin-bottom: 16px;
+  color: #4b545c;
+  max-width: 700px;
+}
+
+/* gambar di tengah artikel, beri jarak atas-bawah */
+.gambar-artikel {
+  border-radius: 4px;
+  margin: 24px 0;
+  height: 340px;
+  object-fit: cover;
+}
+
+/* tombol kembali di akhir artikel */
+.artikel .tombol {
+  margin-top: 8px;
+}
+
+/* ---------- 7b. TAMBAHAN: FORM, PROFIL TIM ---------- */
+
+/* form kontak (halaman kontak.html) */
+.form-kontak {
+  max-width: 600px;
+}
+
+/* label di atas tiap isian */
+.form-kontak label {
+  display: block;
+  font-weight: bold;
+  margin: 14px 0 6px 0;
+}
+
+/* kotak isian: input dan textarea */
+.form-kontak input,
+.form-kontak textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c9d2e0;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+/* textarea (kotak pesan) lebih tinggi dan bisa di-resize */
+.form-kontak textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-kontak .tombol {
+  margin-top: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+/* huruf besar pengganti foto di kartu profil tim (tim.html) */
+.inisial {
+  font-size: 48px;
+  font-weight: bold;
+  color: #2f7ded;
+  text-align: center;
+  padding: 30px 0;
+  background: #f4f6fa;
+}
+
+/* tombol gelap untuk latar terang (halaman karier.html).
+   Pakai class, BUKAN style inline, supaya hover tetap berfungsi */
+.tombol-gelap {
+  background: #04123c;
+}
+
+.tombol-gelap:hover {
+  background: #0a1f44;
+}
+
+/* jarak ekstra di atas tombol (halaman tim.html).
+   Pakai class, BUKAN style inline, supaya konsisten */
+.jarak-atas {
+  margin-top: 30px;
+}
+
+/* versi lebih besar, dipakai judul "Info Kontak" (kontak.html) */
+.jarak-atas-besar {
+  margin-top: 50px;
+}
+
+/* pesan konfirmasi setelah form dikirim (kontak.html) */
+.pesan-terkirim {
+  color: #1a9c5b;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* ---------- 8. CTA ---------- */
+.cta {
+  background: #0a1f44;
+  color: #ffffff;
+  padding: 50px 0;
+}
+
+.baris-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* teks kiri, tombol kanan */
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.cta p {
+  color: #c2cee6;
+}
+
+/* tombol "Hubungi Kami" di bagian cta: garis putih, bukan kotak biru */
+.garis-putih {
+  background: none;
+  border: 2px solid #ffffff;
+}
+
+.garis-putih:hover {
+  background: #ffffff;
+  color: #0a1f44;
+}
+
+/* ---------- 9. FOOTER ---------- */
+.footer {
+  background: #04123c;
+  color: #c2cee6;
+}
+
+.baris-footer {
+  display: flex;
+  gap: 40px;
+  padding: 50px 20px;
+}
+
+.kolom-footer {
+  width: 33.33%;
+}
+
+.judul-footer {
+  color: #ffffff;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.kolom-footer li {
+  margin-bottom: 8px;
+}
+
+.kolom-footer a:hover {
+  color: #ffffff;
+}
+
+/* baris terbawah: copyright + sosmed */
+.footer-bawah {
+  border-top: 1px solid #1b2c50;
+}
+
+.flex-bawah {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  font-size: 13px;
+}
+
+/* kotak kecil berisi tulisan FB X YT IG */
+.sosmed a {
+  display: inline-block;
+  border: 1px solid #33518f;
+  padding: 4px 10px;
+  margin-left: 6px;
+  font-size: 12px;
+}
+
+.sosmed a:hover {
+  background: #0e2c66;
+  color: #ffffff;
+}
+
+/* ---------- 10. TAMPILAN HP ---------- */
+@media (max-width: 800px) {
+
+  /* hamburger tampil, menu sembunyi dulu */
+  .tombol-menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;          /* sembunyikan menu di HP */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0a1f44;
+    flex-direction: column; /* menu jadi ke bawah */
+    gap: 0;
+  }
+
+  /* saat dibuka lewat JS, class "buka" ditambahkan */
+  .menu.buka {
+    display: flex;
+  }
+
+  .menu > li a {
+    padding: 14px 20px;
+    border-top: 1px solid #1b2c50;
+  }
+
+  /* dropdown di HP: tampil seperti daftar biasa, bukan melayang */
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    background: #0e2c66;
+  }
+
+  .dropdown li a {
+    color: #dbe4f5;
+  }
+
+  /* hero lebih pendek di HP */
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  /* semua yang tadinya sebaris, jadi susun ke bawah */
+  .baris-tentang {
+    flex-direction: column;
+  }
+
+  .foto-tentang,
+  .teks-tentang {
+    width: 100%;
+  }
+
+  .baris-kartu {
+    flex-direction: column;
+  }
+
+  .kartu {
+    width: 100%;
+  }
+
+  /* di HP, tinggi gambar artikel lebih rendah */
+  .gambar-artikel {
+    height: 220px;
+  }
+
+  .baris-footer,
+  .kolom-footer {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .kolom-footer {
+    border-bottom: 1px solid #1b2c50;
+    padding-bottom: 16px;
+  }
+
+  .flex-bawah {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
