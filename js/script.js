@@ -1,4 +1,4 @@
-// SCRIPT WEBSITE LATIHAN
+// SCRIPT CLONING WEBSITE
 // 1. MENU HAMBURGER
 var tombolMenu = document.getElementById("tombolMenu");
 var menuUtama = document.getElementById("menuUtama");
