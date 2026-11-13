@@ -1,51 +1,32 @@
-/* =========================================
-   STYLE WEBSITE LATIHAN
-   Dipakai oleh semua halaman .html di folder ini.
-   Dibuat manual, sederhana, untuk pemula.
-
-   Urutan file:
-   1. Reset
-   2. Aturan umum
-   3. Header dan menu
-   4. Hero (index + halaman detail)
-   5. Tentang
-   6. Produk (kartu)
-   7. Artikel (halaman detail)
-   8. CTA
-   9. Footer
-   10. Tampilan HP (media query)
-========================================= */
-
-/* ---------- 1. RESET ---------- */
-/* Menghapus margin bawaan browser supaya semua sama */
+/* STYLE WEBSITE */
+/* 1. RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ---------- 2. ATURAN UMUM ---------- */
+/* 2. ATURAN UMUM */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #1c2126;          /* warna teks gelap */
-  line-height: 1.6;        /* jarak antar baris */
+  color: #1c2126;
+  line-height: 1.6;
 }
 
 img {
-  width: 100%;             /* gambar selalu memenuhi kotaknya */
+  width: 100%;
   display: block;
 }
 
 a {
-  text-decoration: none;   /* hapus garis bawah link */
+  text-decoration: none;
   color: inherit;
 }
 
 ul {
-  list-style: none;        /* hapus titik di daftar */
+  list-style: none;
 }
 
-/* wadah = kotak tengah dengan lebar sama di semua section */
 .wadah {
   max-width: 1100px;
   margin: 0 auto;
@@ -56,7 +37,6 @@ h1, h2, h3 {
   line-height: 1.1;
 }
 
-/* label kecil berwarna biru di atas judul */
 .label-biru {
   color: #1c5fd0;
   font-size: 13px;
@@ -65,7 +45,6 @@ h1, h2, h3 {
   margin-bottom: 8px;
 }
 
-/* tombol umum */
 .tombol {
   display: inline-block;
   background: #2f7ded;
@@ -75,15 +54,14 @@ h1, h2, h3 {
   font-weight: bold;
 }
 
-/* tombol berubah sedikit saat disorot mouse (hover) */
 .tombol:hover {
   background: #1c5fd0;
 }
 
-/* ---------- 3. HEADER DAN MENU ---------- */
+/* 3. HEADER DAN MENU */
 .header {
-  background: #04123c;     /* biru dongker gelap, khas situs korporat */
-  position: sticky;        /* menempel di atas saat scroll */
+  background: #04123c;
+  position: sticky;
   top: 0;
   z-index: 10;
 }
@@ -92,7 +70,7 @@ h1, h2, h3 {
   max-width: 1100px;
   margin: 0 auto;
   padding: 14px 20px;
-  display: flex;           /* logo kiri, menu kanan */
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -104,13 +82,12 @@ h1, h2, h3 {
   letter-spacing: 2px;
 }
 
-/* bagian "CLONE" pada logo berwarna biru terang */
 .logo span {
   color: #4d94ff;
 }
 
 .menu {
-  display: flex;           /* menu tersusun mendatar */
+  display: flex;
   gap: 10px;
 }
 
@@ -125,23 +102,20 @@ h1, h2, h3 {
   background: #0e2c66;
 }
 
-/* Dropdown sederhana.
-   Rahasianya: position absolute + display none/block */
 .punya-dropdown {
   position: relative;
 }
 
 .dropdown {
-  display: none;           /* sembunyikan dulu */
+  display: none;
   position: absolute;
-  top: 100%;               /* muncul di bawah tulisan "Produk" */
+  top: 100%;
   left: 0;
   min-width: 180px;
   background: #ffffff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* saat dropdown dibuka, JS menambah class "buka" */
 .dropdown.buka {
   display: block;
 }
@@ -155,7 +129,6 @@ h1, h2, h3 {
   background: #f4f6fa;
 }
 
-/* tombol hamburger: sembunyikan di layar besar */
 .tombol-menu {
   display: none;
   background: none;
@@ -164,23 +137,21 @@ h1, h2, h3 {
   font-size: 28px;
 }
 
-/* ---------- 4. HERO ---------- */
+/* 4. HERO */
 .hero {
-  /* gambar sebagai latar + warna lapisan gelap agar teks terbaca */
   background: linear-gradient(rgba(4, 18, 60, 0.75), rgba(4, 18, 60, 0.75)),
               url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/US_Navy_080923-N-2183K-024_The_guided-missile_cruiser_USS_Cape_St._George_%28CG_71%29_steams_in_the_Indian_Ocean_supporting_maritime_security_operations_in_the_U.S._5th_Fleet_area_of_responsibility.jpg/1600px-US_Navy_080923-N-2183K-024_The_guided-missile_cruiser_USS_Cape_St._George_%28CG_71%29_steams_in_the_Indian_Ocean_supporting_maritime_security_operations_in_the_U.S._5th_Fleet_area_of_responsibility.jpg");
-  background-size: cover;           /* gambar menyesuaikan lebar */
+  background-size: cover;
   background-position: center;
 
-  min-height: 520px;                /* tinggi minimal bagian hero */
-  display: flex;                    /* trik agar isi di tengah vertikal */
+  min-height: 520px;
+  display: flex;
   align-items: center;
 
   color: #ffffff;
   text-align: left;
 }
 
-/* hero versi kecil untuk halaman detail (hero-kecil) */
 .hero-kecil {
   min-height: 320px;
 }
@@ -210,13 +181,13 @@ h1, h2, h3 {
   color: #dbe4f5;
 }
 
-/* ---------- 5. TENTANG ---------- */
+/* 5. TENTANG */
 .tentang {
   padding: 70px 0;
 }
 
 .baris-tentang {
-  display: flex;           /* gambar kiri, teks kanan */
+  display: flex;
   gap: 40px;
   align-items: center;
 }
@@ -224,7 +195,7 @@ h1, h2, h3 {
 .foto-tentang {
   width: 50%;
   height: 320px;
-  object-fit: cover;       /* gambar dipotong rapi memenuhi kotak */
+  object-fit: cover;
   border-radius: 4px;
 }
 
@@ -237,15 +208,14 @@ h1, h2, h3 {
   color: #4b545c;
 }
 
-/* tombol di bagian tentang butuh jarak dari teks */
 .teks-tentang .tombol {
   margin-top: 8px;
 }
 
-/* ---------- 6. PRODUK (KARTU) ---------- */
+/* 6. PRODUK (KARTU) */
 .produk {
   padding: 70px 0;
-  background: #f4f6fa;     /* latar abu muda biar beda dengan section lain */
+  background: #f4f6fa;
 }
 
 .produk h2 {
@@ -257,23 +227,20 @@ h1, h2, h3 {
   gap: 24px;
 }
 
-/* kartu = link besar (a) yang berisi gambar + teks */
 .kartu {
   width: 33.33%;
   background: #ffffff;
   border-radius: 4px;
-  overflow: hidden;        /* gambar tidak keluar dari kartu */
+  overflow: hidden;
   border: 1px solid #e3e7ee;
-  display: block;          /* supaya tag <a> berlaku seperti kotak */
+  display: block;
 }
 
-/* efek saat kartu disorot mouse: sedikit naik */
 .kartu:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* gambar kartu harus punya tinggi tetap supaya kartu rata */
 .kartu img {
   height: 180px;
   object-fit: cover;
@@ -300,12 +267,11 @@ h1, h2, h3 {
   color: #4b545c;
 }
 
-/* ---------- 7. ARTIKEL (halaman detail) ---------- */
+/* 7. ARTIKEL (halaman detail) */
 .artikel {
   padding: 60px 0;
 }
 
-/* jejak halaman: Home -> Autonomy & AI */
 .breadcrumb {
   font-size: 14px;
   color: #4b545c;
@@ -330,7 +296,6 @@ h1, h2, h3 {
   max-width: 700px;
 }
 
-/* gambar di tengah artikel, beri jarak atas-bawah */
 .gambar-artikel {
   border-radius: 4px;
   margin: 24px 0;
@@ -338,26 +303,21 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-/* tombol kembali di akhir artikel */
 .artikel .tombol {
   margin-top: 8px;
 }
 
-/* ---------- 7b. TAMBAHAN: FORM, PROFIL TIM ---------- */
-
-/* form kontak (halaman kontak.html) */
+/* 7b. TAMBAHAN: FORM, PROFIL TIM */
 .form-kontak {
   max-width: 600px;
 }
 
-/* label di atas tiap isian */
 .form-kontak label {
   display: block;
   font-weight: bold;
   margin: 14px 0 6px 0;
 }
 
-/* kotak isian: input dan textarea */
 .form-kontak input,
 .form-kontak textarea {
   width: 100%;
@@ -368,7 +328,6 @@ h1, h2, h3 {
   font-size: 15px;
 }
 
-/* textarea (kotak pesan) lebih tinggi dan bisa di-resize */
 .form-kontak textarea {
   min-height: 120px;
   resize: vertical;
@@ -380,7 +339,6 @@ h1, h2, h3 {
   cursor: pointer;
 }
 
-/* huruf besar pengganti foto di kartu profil tim (tim.html) */
 .inisial {
   font-size: 48px;
   font-weight: bold;
@@ -390,8 +348,6 @@ h1, h2, h3 {
   background: #f4f6fa;
 }
 
-/* tombol gelap untuk latar terang (halaman karier.html).
-   Pakai class, BUKAN style inline, supaya hover tetap berfungsi */
 .tombol-gelap {
   background: #04123c;
 }
@@ -400,25 +356,21 @@ h1, h2, h3 {
   background: #0a1f44;
 }
 
-/* jarak ekstra di atas tombol (halaman tim.html).
-   Pakai class, BUKAN style inline, supaya konsisten */
 .jarak-atas {
   margin-top: 30px;
 }
 
-/* versi lebih besar, dipakai judul "Info Kontak" (kontak.html) */
 .jarak-atas-besar {
   margin-top: 50px;
 }
 
-/* pesan konfirmasi setelah form dikirim (kontak.html) */
 .pesan-terkirim {
   color: #1a9c5b;
   font-weight: bold;
   margin-top: 10px;
 }
 
-/* ---------- 8. CTA ---------- */
+/* 8. CTA */
 .cta {
   background: #0a1f44;
   color: #ffffff;
@@ -428,7 +380,7 @@ h1, h2, h3 {
 .baris-cta {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* teks kiri, tombol kanan */
+  justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -442,7 +394,6 @@ h1, h2, h3 {
   color: #c2cee6;
 }
 
-/* tombol "Hubungi Kami" di bagian cta: garis putih, bukan kotak biru */
 .garis-putih {
   background: none;
   border: 2px solid #ffffff;
@@ -453,7 +404,7 @@ h1, h2, h3 {
   color: #0a1f44;
 }
 
-/* ---------- 9. FOOTER ---------- */
+/* 9. FOOTER */
 .footer {
   background: #04123c;
   color: #c2cee6;
@@ -483,7 +434,6 @@ h1, h2, h3 {
   color: #ffffff;
 }
 
-/* baris terbawah: copyright + sosmed */
 .footer-bawah {
   border-top: 1px solid #1b2c50;
 }
@@ -496,7 +446,6 @@ h1, h2, h3 {
   font-size: 13px;
 }
 
-/* kotak kecil berisi tulisan FB X YT IG */
 .sosmed a {
   display: inline-block;
   border: 1px solid #33518f;
@@ -510,26 +459,24 @@ h1, h2, h3 {
   color: #ffffff;
 }
 
-/* ---------- 10. TAMPILAN HP ---------- */
+/* 10. TAMPILAN HP */
 @media (max-width: 800px) {
 
-  /* hamburger tampil, menu sembunyi dulu */
   .tombol-menu {
     display: block;
   }
 
   .menu {
-    display: none;          /* sembunyikan menu di HP */
+    display: none;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: #0a1f44;
-    flex-direction: column; /* menu jadi ke bawah */
+    flex-direction: column;
     gap: 0;
   }
 
-  /* saat dibuka lewat JS, class "buka" ditambahkan */
   .menu.buka {
     display: flex;
   }
@@ -539,7 +486,6 @@ h1, h2, h3 {
     border-top: 1px solid #1b2c50;
   }
 
-  /* dropdown di HP: tampil seperti daftar biasa, bukan melayang */
   .dropdown {
     position: static;
     box-shadow: none;
@@ -550,7 +496,6 @@ h1, h2, h3 {
     color: #dbe4f5;
   }
 
-  /* hero lebih pendek di HP */
   .hero {
     min-height: 400px;
   }
@@ -559,7 +504,6 @@ h1, h2, h3 {
     font-size: 28px;
   }
 
-  /* semua yang tadinya sebaris, jadi susun ke bawah */
   .baris-tentang {
     flex-direction: column;
   }
@@ -577,7 +521,6 @@ h1, h2, h3 {
     width: 100%;
   }
 
-  /* di HP, tinggi gambar artikel lebih rendah */
   .gambar-artikel {
     height: 220px;
   }
